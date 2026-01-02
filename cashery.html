@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market Manager</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <span class="menu-btn" onclick="toggleMenu()">☰</span>
+  <h3>کاشێر</h3>
+</header>
+
+<nav id="menu">
+ <a onclick="show('products')">🛒 داتای تازە</a>
+ <a onclick="show('sale')">💵 فرۆشتن</a>
+ <a onclick="show('returns')">🔁 گەڕانەوە</a>
+ <a onclick="show('report')">📊 ڕاپۆرت</a>
+ <a onclick="show('stock')">🏪کۆگا  </a>
+ <a onclick="show('loan')">💳 قەرز</a>
+</nav>
+
+<div class="container">
+<div id="saleTotal">نرخی گشتی: $0</div>
+<div id="products" class="card">
+ <h3>Products & Prices</h3>
+
+
+
+
+
+
+
+ <input id="pname" placeholder="ناو">
+ <input id="pprice" type="number" placeholder="نرخ">
+<select id="pcurrency">
+  <option value="دینار">دینار</option>
+  <option value="$">دۆلار</option>
+</select>
+ <input id="pstock" type="number" placeholder="کۆگا">
+ <button onclick="addProduct()">تۆمارکردن</button>
+ <div id="plist"></div>
+</div>
+
+<div id="sale" class="card hidden">
+ <h3>New Sale</h3>
+ <select id="saleProduct"></select>
+ <input id="saleQty" type="number" placeholder="ژمارەی فرۆشتن">
+ <button onclick="makeSale()">فڕۆشرا</button>
+ <div id="saleMsg"></div>
+</div>
+
+<div id="returns" class="card hidden">
+ <h3>گەڕانەوەی ئەشیا</h3>
+ <select id="returnProduct"></select>
+ <input id="returnQty" type="number" placeholder="Quantity">
+ <button onclick="makeReturn()">گەرانەوەی ئەشیا ✅</button>
+</div>
+
+<div id="report" class="card hidden">
+ <h3>ڕاپۆرت</h3>
+ <div id="todayTotal" style="font-weight:bold;margin-bottom:8px"></div>
+ <div id="salesList"></div>
+</div>
+
+<div id="stock" class="card hidden">
+ <h3>کۆگا</h3>
+ <div id="stockList"></div>
+</div>
+
+<div id="loan" class="card hidden">
+ <h3>قەرز</h3>
+ <input id="loanName" placeholder="ناوی کڕیاڕ">
+ <input id="loanAmount" type="number" placeholder="بڕ">
+ <button onclick="addLoan()">قەرز</button>
+ <div id="loanList"></div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

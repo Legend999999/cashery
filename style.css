@@ -1,0 +1,178 @@
+:root{
+  --bg:#121212;
+  --card:#1e1e1e;
+  --dark:#000;
+  --accent:#1e88e5;
+  --text:#eee;
+  --text-muted:#aaa;
+  --border:#333;
+}
+
+*{box-sizing:border-box;}
+body{
+  font-family:'Arial', sans-serif;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:var(--dark);
+  color:#fff;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  box-shadow:0 2px 6px rgba(0,0,0,.5);
+}
+.menu-btn{
+  font-size:28px;
+  cursor:pointer;
+}
+h3{
+  margin:0;
+  font-size:20px;
+  font-weight:600;
+}
+
+/* MENU */
+nav{
+  position:fixed;
+  top:0;
+  left:-260px;
+  width:240px;
+  height:100%;
+  background:#111;
+  color:#fff;
+  padding:20px 12px;
+  transition:.3s;
+  z-index:20;
+  border-right:1px solid var(--border);
+}
+nav a{
+  display:block;
+  color:#fff;
+  padding:14px 12px;
+  text-decoration:none;
+  font-size:16px;
+  border-bottom:1px solid var(--border);
+  border-radius:8px;
+  margin-bottom:4px;
+  transition:.2s;
+}
+nav a:hover{
+  background:var(--accent);
+  color:#fff;
+}
+
+/* CONTENT */
+.container{
+  padding:16px;
+}
+.card{
+  background:var(--card);
+  padding:16px;
+  margin-bottom:16px;
+  border-radius:16px;
+  box-shadow:0 6px 18px rgba(0,0,0,.4);
+}
+
+/* INPUTS & BUTTONS */
+input, select, button{
+  padding:14px;
+  margin:8px 0;
+  width:100%;
+  border-radius:12px;
+  border:1px solid var(--border);
+  font-size:16px;
+  background:#2a2a2a;
+  color:var(--text);
+}
+input::placeholder, select::placeholder{
+  color:var(--text-muted);
+}
+button{
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.2s;
+}
+button:hover{
+  opacity:.9;
+}
+button:active{
+  opacity:.7;
+}
+
+.hidden{display:none}
+
+/* LISTS */
+#plist,#stockList,#salesList,#loanList{
+  font-size:15px;
+  line-height:1.6;
+  padding-left:6px;
+}
+#plist div,#stockList div,#salesList div,#loanList div{
+  padding:8px 6px;
+  border-bottom:1px solid var(--border);
+  border-radius:8px;
+  margin-bottom:6px;
+  background:#2a2a2a;
+}
+
+/* SALE TOTAL */
+#saleTotal{
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+/* MOBILE-FRIENDLY */
+@media(max-width:480px){
+  header{padding:12px;}
+  .menu-btn{font-size:26px;}
+  nav{width:200px;}
+  input, select, button{font-size:15px;}
+  .card{padding:14px;margin-bottom:14px;}
+}
+
+/* ===== DAILY REPORT / SALES LIST ===== */
+#salesList div {
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  background: #1f1f1f;
+  border-left: 4px solid var(--accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s, transform 0.1s;
+  font-size: 15px;
+}
+
+#salesList div:hover {
+  background: #2a2a2a;
+  transform: translateX(2px);
+}
+
+#salesList div button {
+  font-size: 13px;
+  padding: 5px 10px;
+  margin-left: 8px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#salesList div button:hover {
+  opacity: 0.9;
+}
